@@ -1,27 +1,24 @@
 
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-}
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-android {
-    namespace = "br.com.luaassistenteia"
-    compileSdk = 35
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    defaultConfig {
-        applicationId = "br.com.luaassistenteia"
-        minSdk = 23
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
-    }
+    <application
+        android:allowBackup="true"
+        android:label="Lua Assistente IA"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:supportsRtl="true">
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-}
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>
